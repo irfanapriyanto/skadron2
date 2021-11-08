@@ -2,9 +2,10 @@
     <table class="table" id="estimates-table">
         <thead>
         <tr>
-            <th>Lanud From</th>
-        <th>Lanud To</th>
-        <th>Est Time</th>
+            <th>From</th>
+        <th>To</th>
+        <th>Estimate</th>
+        <th>Fuel</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
@@ -14,6 +15,7 @@
                 <td>{{ $estimate->lanud_from }}</td>
             <td>{{ $estimate->lanud_to }}</td>
             <td>{{ $estimate->est_time }}</td>
+            <td>{{ $estimate->fuel }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['estimates.destroy', $estimate->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
