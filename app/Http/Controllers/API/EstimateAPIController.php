@@ -8,6 +8,7 @@ use App\Models\Estimate;
 use App\Repositories\EstimateRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\Storage;
 use Response;
 
 /**
@@ -96,6 +97,23 @@ class EstimateAPIController extends AppBaseController
         }
 
         return $this->sendResponse($estimate->toArray(),'Estimates successfully');
+    }
+
+    public function schedule($day)
+    {
+        // $file = Storage::get('storage/'.$day.'.pdf');
+        // dd($file);
+        // if (empty($file)) {
+        //     return $this->sendError('File not found');
+        // }
+
+        // return $this->sendResponse($file->toArray(),'Estimates successfully');
+        return $this->sendResponse(
+            [
+                'file' => url($day.'.pdf'),
+            ], 'File successfully'
+        );
+
     }
 
     /**
