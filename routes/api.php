@@ -23,5 +23,5 @@ Route::resource('lanuds', 'LanudAPIController');
 
 
 Route::resource('estimates', 'EstimateAPIController');
-Route::post('/estimates/search', [App\Http\Controllers\API\estimateAPIController::class, 'search']);
-Route::get('/schedules/{day}',[App\Http\Controllers\API\estimateAPIController::class, 'schedule']);
+Route::post('/estimates/search', [App\Http\Controllers\API\EstimateAPIController::class, 'search']);
+Route::get('/schedules/{day}',[App\Http\Controllers\API\EstimateAPIController::class, 'schedule']);
