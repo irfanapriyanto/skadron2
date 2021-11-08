@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('lanuds', 'LanudAPIController');
+
+
+Route::resource('estimates', 'EstimateAPIController');
+Route::post('/estimates/search', [App\Http\Controllers\API\estimateAPIController::class, 'search']);
